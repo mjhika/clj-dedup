@@ -35,7 +35,7 @@
 
 (defn -main [& args]
   (let [atm (atom {})]
-    (->> (enum-files (first args))
+    (->> (enum-files (or (first args) "."))
          (map file-details)
          (#(doseq [tup %]
              (swap! atm assoc-entry tup))))
