@@ -45,7 +45,7 @@
            (map hash-file)
            (#(doseq [tup %]
                (swap! final assoc-entry tup))))
-      (pp/pprint (filter v>1? @final)))))
+      (pp/pprint (into {} (filter v>1? @final))))))
 
 (comment
   (sha512sum (file->bytes "deps.edn"))
