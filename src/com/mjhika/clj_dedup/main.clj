@@ -49,4 +49,4 @@
 
 (comment
   (sha512sum (file->bytes "deps.edn"))
-  (-main *command-line-args*))
+  (-main nil))
